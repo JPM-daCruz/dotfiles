@@ -105,17 +105,19 @@ set completeopt=longest,menuone,preview
 set modelines=0
 set nomodeline
 
-"read .launch files like xml
+" Read .launch files like xml
 au BufNewFile,BufRead *.launch set filetype=xml
 au BufNewFile,BufRead,BufReadPost *.launch set syntax=xml
 
 set comments=sl:/*,mb:\ *,elx:\ */ " intelligent comments
 
-"color scheme available:[gruvbox, vim-monokai-tasty]
+" Color scheme available:[gruvbox, vim-monokai-tasty]
 colorscheme gruvbox
 set background=dark
 set t_Co=256
 let g:gruvbox_contrast_dark='default'
+" Set the background transparent
+hi Normal guibg=NONE ctermbg=NONE
 
 " Tweaks for browsing with netrw
 " let g:netrw_banner=0        " disable annoying banner
