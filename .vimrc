@@ -58,7 +58,7 @@ set wildmenu                    " Visual autocomplete for command menu
 set clipboard^=unnamed,unnamedplus " Use system clipboard
 set backspace=indent,eol,start  " Proper backspace behavior.
 set path+=**                    " Search down into subfolders
-set cursorline                  " Line where the cursor is
+set cursorline                  " Line where the cursor is / disable in slow PCs
 
 " Indentation
 set smarttab                    " Better tabs
