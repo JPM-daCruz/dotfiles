@@ -8,6 +8,7 @@ set secure
 
 call plug#begin()
 Plug 'morhetz/gruvbox', { 'as': 'gruvbox' }
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-scripts/a.vim'        " Switch between header and src
 Plug 'othree/xml.vim'	          " Better xml support			
 Plug 'yegappan/mru'             " Show recent files
@@ -46,7 +47,7 @@ set laststatus=2                " Always display the status line
 set nofoldenable                " Disable folding
 set lazyredraw                  " Use lazy redrawing
 set noshowmode                  " Don't show mode
-set number        " Show line numbers
+set nu rnu        " Show line numbers
 set pastetoggle=<F2>            " Toggle paste mode with F2
 set ruler                       " Show ruler
 set showcmd                     " Show current command
@@ -58,7 +59,7 @@ set wildmenu                    " Visual autocomplete for command menu
 set clipboard^=unnamed,unnamedplus " Use system clipboard
 set backspace=indent,eol,start  " Proper backspace behavior.
 set path+=**                    " Search down into subfolders
-set cursorline                  " Line where the cursor is / disable in slow PCs
+set cursorline                  " Line where the cursor is
 
 " Indentation
 set smarttab                    " Better tabs
@@ -99,7 +100,7 @@ set spelllang=en_us             " English as default language
 set spell                       " Enable by default
 
 " Make completion menu behave like an IDE
-set completeopt=longest,menuone,preview
+"set completeopt=longest,menuone,preview
 
 " Disable modelines as a security precaution
 set modelines=0
@@ -111,13 +112,25 @@ au BufNewFile,BufRead,BufReadPost *.launch set syntax=xml
 
 set comments=sl:/*,mb:\ *,elx:\ */ " intelligent comments
 
+
 " Color scheme available:[gruvbox, vim-monokai-tasty]
 colorscheme gruvbox
 set background=dark
 set t_Co=256
 let g:gruvbox_contrast_dark='default'
+
+if has('gui_running')
+    set guifont=Source\ Code\ Pro\ 13
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+    set guioptions-=e
+    set guiheadroom=0
+endif
+
 " Set the background transparent
-hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
 
 " Tweaks for browsing with netrw
 " let g:netrw_banner=0        " disable annoying banner
@@ -176,11 +189,11 @@ nnoremap <silent> <leader>fix :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:pymode_python = 'python3'
 
 imap <C-A> <esc>a<Plug>snipMateNextOrTrigger
-let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
-let g:DoxygenToolkit_paramTag_pre="@Param "
-let g:DoxygenToolkit_returnTag="@Returns   "
-let g:DoxygenToolkit_blockHeader="-------------------------------------------------------------------------"
-let g:DoxygenToolkit_blockFooter="-------------------------------------------------------------------------"
+let g:DoxygenToolkit_briefTag_pre="@brief  "
+let g:DoxygenToolkit_paramTag_pre="@param "
+let g:DoxygenToolkit_returnTag="@return   "
+"let g:DoxygenToolkit_blockHeader="-------------------------------------------------------------------------"
+"let g:DoxygenToolkit_blockFooter="-------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="Joao Cruz"
 let g:DoxygenToolkit_licenseTag="My own license"  
 
