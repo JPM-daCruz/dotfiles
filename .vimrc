@@ -21,8 +21,8 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround' " Better support for parentheses, brackets, etc.. 
 Plug 'junegunn/goyo.vim' " Distraction free
 Plug 'vim-scripts/doxygentoolkit.vim',      { 'for': 'cpp' }  " Automatic comments
-Plug 'kgreenek/vim-ros-ycm'
-Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
+"Plug 'kgreenek/vim-ros-ycm'
+"Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 Plug 'preservim/nerdcommenter' " toggle comments
 call plug#end()
 
@@ -45,21 +45,21 @@ set colorcolumn=80             " Show ruler columns
 set hidden                      " Hide buffers instead of closing them
 set laststatus=2                " Always display the status line
 set nofoldenable                " Disable folding
-set lazyredraw                  " Use lazy redrawing
+"set lazyredraw                  " Use lazy redrawing
 set noshowmode                  " Don't show mode
-set nu rnu        " Show line numbers
+set nu                          " Show line numbers
 set pastetoggle=<F2>            " Toggle paste mode with F2
 set ruler                       " Show ruler
 set showcmd                     " Show current command
 set showmatch                   " Show matching bracket/parenthesis/etc
 set showmode                    " Show current mode
 set title                       " Change terminal title
-set ttyfast                     " Fast terminal
+"set ttyfast                     " Fast terminal
 set wildmenu                    " Visual autocomplete for command menu
 set clipboard^=unnamed,unnamedplus " Use system clipboard
 set backspace=indent,eol,start  " Proper backspace behavior.
 set path+=**                    " Search down into subfolders
-set cursorline                  " Line where the cursor is
+"set cursorline                  " Line where the cursor is
 
 " Indentation
 set smarttab                    " Better tabs
